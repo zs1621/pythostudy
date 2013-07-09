@@ -1,7 +1,6 @@
+#
+#author github @nicolasmancera  
 from random import uniform 
- 
-
- 
 def radixsort(lista): 
     cifras=contar(lista) 
     mod=10 
