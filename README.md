@@ -8,3 +8,6 @@
 
 =======
 7-12,2013 add sort result and visual result
+
+=======
+7-21,2013 add anagram solutions
