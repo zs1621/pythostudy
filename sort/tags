@@ -1,0 +1,42 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+A	diff.py	/^A = []$/;"	v
+B	diff.py	/^B = [] $/;"	v
+C	diff.py	/^C = []$/;"	v
+contar	radix_sort.py	/^def contar(lista): $/;"	f
+f	diff.py	/^f = open('result.json','w')$/;"	v
+globalsed	course/question_1.py	/^import globalsed$/;"	i
+globalsed	merge_sort.py	/^import globalsed$/;"	i
+init	course/globalsed.py	/^def init():$/;"	f
+jon	diff.py	/^jon = []$/;"	v
+json	diff.py	/^import json$/;"	i
+length	diff.py	/^length = [1000, 10000, 30000, 50000]$/;"	v
+maopao	diff.py	/^import maopao$/;"	i
+mayor	radix_sort.py	/^def mayor(lista) : $/;"	f
+merge	merge_sort.py	/^def merge(A, a, b, c):$/;"	f
+merge_sort	course/question_1.py	/^import merge_sort$/;"	i
+merge_sort	diff.py	/^import merge_sort$/;"	i
+merge_time	diff.py	/^	merge_time = time.clock() - start$/;"	v
+mp	maopao.py	/^def mp(A):$/;"	f
+num	diff.py	/^		num = random.randint(100000,ran)$/;"	v
+open_txt	course/question_1.py	/^def open_txt():$/;"	f
+passlist	course/question_1.py	/^passlist = []$/;"	v
+ponerCola	radix_sort.py	/^def ponerCola(lista, mod, div): $/;"	f
+radix_sort	diff.py	/^import radix_sort $/;"	i
+radix_time	diff.py	/^	radix_time = time.clock() - start2$/;"	v
+radixsort	radix_sort.py	/^def radixsort(lista): $/;"	f
+ran	diff.py	/^ran = 2 ** 140$/;"	v
+random	diff.py	/^import random$/;"	i
+sort	merge_sort.py	/^def sort(A, a, b): $/;"	f
+start	diff.py	/^	start = time.clock()$/;"	v
+start	maopao.py	/^	start = start.clock()$/;"	v
+start	merge_sort.py	/^	start = time.clock()$/;"	v
+start2	diff.py	/^	start2 = time.clock()$/;"	v
+sys	course/question_1.py	/^import sys $/;"	i
+time	diff.py	/^import time$/;"	i
+time	maopao.py	/^import time$/;"	i
+uniform	radix_sort.py	/^from random import uniform $/;"	i

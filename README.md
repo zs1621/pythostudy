@@ -5,3 +5,6 @@
 
 ========
 7-9,2013   add sort algorithm
+
+=======
+7-12,2013 add sort result and visual result
