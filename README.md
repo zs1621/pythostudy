@@ -11,3 +11,6 @@
 
 =======
 7-21,2013 add anagram solutions
+
+======
+7-22, 2013 add modifier introudce -> modifier
