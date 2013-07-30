@@ -14,3 +14,6 @@
 
 ======
 7-22, 2013 add modifier introudce -> modifier
+
+=========
+7-31, 2013 add torando source code reading
