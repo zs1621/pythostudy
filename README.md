@@ -17,3 +17,6 @@
 
 =========
 7-31, 2013 add torando source code reading
+
+=========
+7-31, 2013 add cached_property decortor  modifier -> cached_property
