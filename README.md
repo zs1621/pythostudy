@@ -23,3 +23,6 @@
 
 ========
 8-1, 2013 add property decortor  modifier -> property
+
+==========
+8-4, 2013 add  super example class -> super (TBD) 
