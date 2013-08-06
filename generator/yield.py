@@ -19,6 +19,7 @@ def get_primes(number):
     while True:
         if is_prime(number):
             number = yield number
+	    #yield number
         number += 1 # <<<<<<<<<
 
 def solve_number_10():

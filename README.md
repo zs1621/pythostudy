@@ -26,3 +26,6 @@
 
 ==========
 8-4, 2013 add  super example class -> super (TBD) 
+
+==========
+8-6, 2013 add yield example generator -> yield
