@@ -29,3 +29,7 @@
 
 ==========
 8-6, 2013 add yield example generator -> yield
+
+=========
+8-13, 2013 add stack data-type use list datatype -> stack
+
