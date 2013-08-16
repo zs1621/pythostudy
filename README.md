@@ -33,3 +33,5 @@
 =========
 8-13, 2013 add stack data-type use list datatype -> stack
 
+===========
+8-16, 2013 add queue data-type    datatype -> queue
