@@ -35,3 +35,6 @@
 
 ===========
 8-16, 2013 add queue data-type    datatype -> queue
+
+==========
+8-17, 2013 add deque data-type     datatype -> deque
