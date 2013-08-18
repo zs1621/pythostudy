@@ -38,3 +38,5 @@
 
 ==========
 8-17, 2013 add deque data-type     datatype -> deque
+==========
+8-18, 2013 add linked_list data-type datatype -> linked_list
