@@ -18,21 +18,22 @@ def is_prime(number):
 def get_primes(number):
     while True:
         if is_prime(number):
-            number = yield number
-	    #yield number
-        number += 1 # <<<<<<<<<
+            #number = yield number
+	    yield number
+        number = int(number) + 1 # <<<<<<<<<
 
 def solve_number_10():
     # She *is* working on Project Euler #10, I knew it!
     total = 2
     for next_prime in get_primes(3):
+	print 'ki', next_prime
         if next_prime < 10:
             total += next_prime
         else:
             print(total)
             return
 
-#solve_number_10()
+solve_number_10()
 """
 	34: solve_number_10 开始执行
 	27: for循环便利 get_primes(3) 
@@ -46,10 +47,10 @@ def solve_number_10():
 
 """
 
-def print_successive_primes(iterations, base=10):
-    prime_generator = get_primes(base)
-    prime_generator.send(None)
-    for power in range(iterations):
-        print(prime_generator.send(base ** power))
-
-print_successive_primes(2)
+#def print_successive_primes(iterations, base=10):
+#    prime_generator = get_primes(base)
+#    prime_generator.send(None)
+#    for power in range(iterations):
+#        print(prime_generator.send(base ** power))
+#
+#print_successive_primes(2)
