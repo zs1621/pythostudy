@@ -50,3 +50,10 @@
 
 ==========
 8-22, 2013 add recursion recursion -> maze haoni maze2
+
+==========
+9-1, 2013 add socket module  http -> http
+
+==========
+9-3, 2013 add built-in-function introduce  built-in-function -> getattr
+
