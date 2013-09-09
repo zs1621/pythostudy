@@ -8,6 +8,7 @@ zlib 库是压缩字符串
 
 如果想 在内存中  解压 .gz文件的流数据 .可以用zlib模块 
 这是因为 大部分的gzip或多或少基于zlib压缩，除了一些格式信息。使用zlib做点改变就可以搞定
+参考 [stream-decompression](http://rationalpie.wordpress.com/2010/06/02/python-streaming-gzip-decompression/)
 """
 
 """
