@@ -57,3 +57,5 @@
 ==========
 9-3, 2013 add built-in-function introduce  built-in-function -> getattr
 
+=========
+9-9, 2013 add compress/decompress   compress -> zlib
