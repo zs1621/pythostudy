@@ -59,3 +59,6 @@
 
 =========
 9-9, 2013 add compress/decompress   compress -> zlib
+
+=========
+9-10, 2013 add with with-> with_statement.py ok.txt
