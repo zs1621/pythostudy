@@ -7,6 +7,7 @@ def de(f):
 	def _call_():
 		print '------------------------'
 		return f()
+	print '================='
 	return _call_
 
 @de
@@ -19,9 +20,10 @@ def func2():
 
 
 if __name__ == '__main__':
-	func1()
-	func2()
-# 运行后 您呢个看到de()其作用了  de就是对func1, func2的共同操作
+	#func1()
+	#func2()
+	pass
+#如果注释`func1()` `func2()`, 运行可以看到输出！说明`@de`会运行`de`函数!然后再去掉注释, 运行后 您呢个看到de()其作用了  de就是对func1, func2的共同操作
 
 print '第一段结束'
 # 注意1:
