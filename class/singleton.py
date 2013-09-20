@@ -17,11 +17,15 @@ class IOLoop(object):
 	def instance():
 		if not hasattr(IOLoop, "_instance"):
 			"""
-			这里理解with 我们可以猜测 threading.Lock() 会在执行完下面的body后做个释放
+			这里理解with  threading.Lock()会在执行完下面的body后做个`threading.release()`
 			"""
 			with IOLoop._instance_lock:
 				if not hasattr(IOLoop, "_instance"):
 					IOLoop._instance = IOLoop()
+				else:
+					print 'has exit'
+		else:
+			print 'has exit instance'
 		return IOLoop._instance
 
 	@staticmethod
@@ -31,4 +35,6 @@ class IOLoop(object):
 print IOLoop.initialized()
 #ioloop = IOLoop.instance()
 ioloop = IOLoop.instance()
+print IOLoop.initialized()
+ioloop1 = IOLoop.instance()
 print IOLoop.initialized()
