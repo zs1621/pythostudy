@@ -25,7 +25,7 @@ class MyClass2():
 	def __init__(self, num):
 		self._Num = num
 
-	#@property
+	@property
 	def Num(self):
 		return self._Num
 

@@ -2,7 +2,7 @@
 # coding: utf-8
 
 """
-写一个简单的http服务器用python
+写一个简单的http服务器用python, 基于socket
 
 """
 
