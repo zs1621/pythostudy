@@ -65,3 +65,6 @@
 
 ==========
 9-22, 2013 add tcp -> tcp_loop_server.py  tcp_ioloop_client.py
+
+=========
+10-2, 2013 add os -> os pipe.py
