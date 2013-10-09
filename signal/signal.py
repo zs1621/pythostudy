@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+"""
+接受信号的程序, 测试 多线程向这个进程发送信号， 会遗漏一些信号
+"""
 import os
 import signal
 from time import sleep
