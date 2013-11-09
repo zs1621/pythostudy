@@ -28,8 +28,8 @@ print example.__name__
 具体 functools.wraps 代码实现
 """
 
-WAPPER_ASSIGNMENTS = ('__module__', '__name__', '__doc__')
-WARPER_UPDATES = ('__dict__',)
+WRAPPER_ASSIGNMENTS = ('__module__', '__name__', '__doc__')
+WRAPPER_UPDATES = ('__dict__',)
 
 def update_wrapper(wrapper,
 		wrapped,
@@ -51,5 +51,13 @@ def wraps(wrapped,
 这里需要注意 return partial 函数  其实就是  update_wrapper(wrapper, ...)
 
 wrapper参数 就是 wrapper 函数
+具体看如下代码
 
 """
+def add(a, b):
+    return a + b
+
+add_two = partial(add, b=2)
+
+print add_two(5)
+
