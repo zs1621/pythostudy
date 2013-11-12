@@ -78,3 +78,7 @@
 
 ============
 11-08, 2013 add functool -> wrap.py
+
+
+============
+11-12, 2013 add inspect -> test.py
