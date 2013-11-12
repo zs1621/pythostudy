@@ -22,13 +22,13 @@ Called to create a new instance of class cls.__new__() is a static method (speci
 
 """
 
-Typical implementations create a new instance of the class by invoking the superclass's __new__() method using `super(currentclass, cls).__new__(cls[, ...])` with appropriate arguments and then modifying the newly-created instance as necessary before returning it. 
+Typical implementations create a new instance of the class by invoking the superclass's __new__() method using `super(currentclass, cls).__new__(cls[, ...])` with appropriate arguments and then modifying the newly-created instance as necessary before returning it.
 """
 
 class A(object):
-	def __init__(self):
-		print ("in init")
-	def __new__(self):
-		print ("in new")
+    def __init__(self):
+        print ("in init")
+    def __new__(self):
+        print ("in new")
 
-A() 
+A()

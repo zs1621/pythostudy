@@ -4,16 +4,16 @@
 from functools import wraps, partial
 
 def my_decorator(f):
-	#@wraps(f)
-	def wrapper(*args, **kwargs):
-		print 'Calling decorated function'
-		return f(*args, **kwargs)
-	return wrapper
+    #@wraps(f)
+    def wrapper(*args, **kwargs):
+        print 'Calling decorated function'
+        return f(*args, **kwargs)
+    return wrapper
 
 @my_decorator
 def example():
-	"""Docstring"""
-	print 'call example function'
+    """Docstring"""
+    print 'call example function'
 
 example()
 print example.__doc__
@@ -32,20 +32,20 @@ WRAPPER_ASSIGNMENTS = ('__module__', '__name__', '__doc__')
 WRAPPER_UPDATES = ('__dict__',)
 
 def update_wrapper(wrapper,
-		wrapped,
-		assigned = WRAPPER_ASSIGNMENTS,
-		updated = WRAPPER_UPDATES):
-	for attr in assigned:
-		setattr(wrapper, attr, getattr(wrapped, attr))
-	for attr in updated:
-		getattr(wrapper, attr).update(getattr(wrapped, attr, {}))
-	return wrapper
+                wrapped,
+                assigned = WRAPPER_ASSIGNMENTS,
+                updated = WRAPPER_UPDATES):
+    for attr in assigned:
+        setattr(wrapper, attr, getattr(wrapped, attr))
+    for attr in updated:
+        getattr(wrapper, attr).update(getattr(wrapped, attr, {}))
+    return wrapper
 
 def wraps(wrapped,
-		assigned = WRAPPER_ASSIGNMENTS,
-		updated = WRAPPER_UPDATES):
-	return partial(update_wrapper, wrapped = warpped,
-			assigned = assigned, updated = updated)
+                assigned = WRAPPER_ASSIGNMENTS,
+                updated = WRAPPER_UPDATES):
+    return partial(update_wrapper, wrapped = warpped,
+                    assigned = assigned, updated = updated)
 
 """
 这里需要注意 return partial 函数  其实就是  update_wrapper(wrapper, ...)
@@ -60,4 +60,3 @@ def add(a, b):
 add_two = partial(add, b=2)
 
 print add_two(5)
-

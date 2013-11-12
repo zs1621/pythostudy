@@ -32,5 +32,3 @@ else:
     w.close()
     print "Child closing"
     sys.exit(0)
-
-

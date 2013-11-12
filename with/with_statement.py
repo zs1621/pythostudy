@@ -16,14 +16,14 @@
 使用 try .. finally 可以保证`tear things down`被执行
 ```
 def controlled_execution(callback):
-	set things up
-	try:
-		callback(thing)
-	finally:
-		tear things down
-	
+        set things up
+        try:
+                callback(thing)
+        finally:
+                tear things down
+
 def my_function(thing):
-	do something
+        do something
 
 contrlled_execution(my_function)
 ```
@@ -34,65 +34,65 @@ contrlled_execution(my_function)
 filename = 'ko.py'
 
 def output(content):
-	print content
+    print content
 
 def controlled_execution(func):
-	#prepare thing
-	f = None
-	try:
-		f = open(filename, 'r')
-		content = '1' + f.read()
-		if not callable(func):
-			return
-		func(content)
-	except IOError, e:
-		print 'Error %s' % str(e)
-	
-	finally:
-		if f:
-			#tear thing down 
-			f.close()
+    #prepare thing
+    f = None
+    try:
+        f = open(filename, 'r')
+        content = '1' + f.read()
+        if not callable(func):
+            return
+        func(content)
+    except IOError, e:
+        print 'Error %s' % str(e)
+
+    finally:
+        if f:
+            #tear thing down
+            f.close()
 
 def test():
-	controlled_execution(output)
-	
+    controlled_execution(output)
+
 test()
 
 
 #2-----------------------------------------2
 """
-第二种方案 使用迭代，然后 for -in 循环 
+第二种方案 使用迭代，然后 for -in 循环
 
 ```
 def controlled_execution():
-	set things up
-	try:
-		yield thing
-	finally:
-		tear things down
+        set things up
+        try:
+                yield thing
+        finally:
+                tear things down
 
 for thing in controled_execution():
-	do something with thing
+        do something with thing
 ```
 缺点： 明明之需要执行一次却要加个循环
 """
 #yield solution
 
 def controlled_execution():
-	f = None
-	try:
-		f = open(filename, 'r')
-		thing = f.read()
-		yield thing
-	except IOError, e:
-		print 'Error %s' % str(e)
-	finally:
-		if f:
-			f.close()
+    f = None
+    try:
+        f = open(filename, 'r')
+        thing = f.read()
+        yield thing
+    except IOError, e:
+        print 'Error %s' % str(e)
+    finally:
+        if f:
+            f.close()
 
 def test2():
-	for content in controlled_execution():
-		output(str(2) + content)
+    for content in controlled_execution():
+        output(str(2) + content)
 test2()
 
 #3----------------------------3
@@ -100,35 +100,35 @@ test2()
 用类的方式加上 with 实现
 ```
 class controlled_execution:
-	def __enter__(self):
-		set things up
-		return thing
-	def __exit__(self, type, value, traceback):
-		tear things down
+        def __enter__(self):
+                set things up
+                return thing
+        def __exit__(self, type, value, traceback):
+                tear things down
 with controlled_execution() as thing:
-	some code
+        some code
 ```
 
-`with`被执行， python 调用 `__enter__`方法,  然后把`__enter__`返回的值赋给`as`后面的变量, 然后执行 `body` ,不管`body`执行了什么， 都会调用守护对象的 `__exit__`方法 
+`with`被执行， python 调用 `__enter__`方法,  然后把`__enter__`返回的值赋给`as`后面的变量, 然后执行 `body` ,不管`body`执行了什么， 都会调用守护对象的 `__exit__`方法
 """
 
 class controlled_execution(object):
-	def __init__(self, filename):
-		self.filename = filename
-		self.f = None
+    def __init__(self, filename):
+        self.filename = filename
+        self.f = None
 
-	def __enter__(self):
-		try:
-			f = open(self.filename, 'r')
-			content = f.read()
-			return content
-		except IOError as e:
-			print (e)
-	def __exit__(self, type, value, traceback):
-		if self.f:
-			print ('type:%s, value: %s, traceback: %s' %(str(type), str(value), str(traceback)))
-			self.f.close()
+    def __enter__(self):
+        try:
+            f = open(self.filename, 'r')
+            content = f.read()
+            return content
+        except IOError as e:
+            print (e)
+    def __exit__(self, type, value, traceback):
+        if self.f:
+            print ('type:%s, value: %s, traceback: %s' %(str(type), str(value), str(traceback)))
+            self.f.close()
 
 with controlled_execution(filename) as thing:
-	if thing:
-		print str(3) + thing
+    if thing:
+        print str(3) + thing

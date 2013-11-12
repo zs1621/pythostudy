@@ -5,7 +5,7 @@ import signal
 import time
 
 def receive_alarm(signum, stack):
-	print 'Alarm:', time.time()
+    print 'Alarm:', time.time()
 
 
 signal.signal(signal.SIGALRM, receive_alarm)

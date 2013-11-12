@@ -1,3 +1,3 @@
 def init():
-	global inter
-	inter = 0
+    global inter
+    inter = 0

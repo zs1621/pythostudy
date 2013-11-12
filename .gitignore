@@ -2,6 +2,9 @@
 
 # C extensions
 *.so
+*.bak
+
+mysql/
 
 # Packages
 *.egg

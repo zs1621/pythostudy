@@ -10,19 +10,19 @@ import functools
 
 
 def handle_connection(client, address):
-	client.send("Hello world from A simple tcpserver")
-	client.close
+    client.send("Hello world from A simple tcpserver")
+    client.close
 
 def connection_read(sock, fd, events):
-	while True:
-		try:
-			connection, address = sock.accept()
-		except socket.error, e:
-			if e.args[0] not in (errno.EWOULDBLOCK, errno.EAGAIN):
-				raise
-			return
-		connection.setblocking(0)
-		handle_connection(connection, address)
+    while True:
+        try:
+            connection, address = sock.accept()
+        except socket.error, e:
+            if e.args[0] not in (errno.EWOULDBLOCK, errno.EAGAIN):
+                raise
+            return
+        connection.setblocking(0)
+        handle_connection(connection, address)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -41,20 +41,20 @@ io_loop.start()
 
 ```
     def __new__(cls, **kwargs):
-	print (cls, 'cls')
+        print (cls, 'cls')
         base = cls.configurable_base()
         args = {}
         if cls is base:
-	    print (cls)
+            print (cls)
             impl = cls.configured_class()
-	    print (impl, 'impl')
+            print (impl, 'impl')
             if base.__impl_kwargs:
                 args.update(base.__impl_kwargs)
         else:
             impl = cls
         args.update(kwargs)
         instance = super(Configurable, cls).__new__(impl)
-	print (instance, 'instance')
+        print (instance, 'instance')
         # initialize vs __init__ chosen for compatiblity with AsyncHTTPClient
         # singleton magic.  If we get rid of that we can switch to __init__
         # here too.
@@ -64,16 +64,16 @@ io_loop.start()
 
 ```
 
-最后的输出呢 
+最后的输出呢
 ```
 
-----------------                                                                 
-                                                                            │<class 'tornado.ioloop.IOLoop'> cls                                              
-                                                                            │<class 'tornado.ioloop.IOLoop'>                                                  
-                                                                            │<class 'tornado.platform.epoll.EPollIOLoop'> impl                                
-                                                                            │<tornado.platform.epoll.EPollIOLoop object at 0x91f4f6c> instance                
-                                                                            │hello                                                                            
+----------------
+                                                                            │<class 'tornado.ioloop.IOLoop'> cls
+                                                                            │<class 'tornado.ioloop.IOLoop'>
+                                                                            │<class 'tornado.platform.epoll.EPollIOLoop'> impl
+                                                                            │<tornado.platform.epoll.EPollIOLoop object at 0x91f4f6c> instance
+                                                                            │hello
 
- ============= 
+ =============
 ```
 """

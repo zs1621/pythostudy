@@ -5,17 +5,17 @@
 #class D(object):
 #    def foo(self):
 #        print "class D"
-#        
+#
 #class B(D):
 #    pass
-#    
-#class C(D):    
+#
+#class C(D):
 #    def foo(self):
 #        print "class C"
-#        
+#
 #class A(B, C):
 #    pass
-#    
+#
 #f = A()
 #f.foo()
 
@@ -79,22 +79,22 @@
 class D(object):
     def foo(self):
         print "class D"
-        
-        
+
+
 class B(object):
     def foo(self):
         print "class B"
         super(B,self).foo()
-    
-class C(D):    
+
+class C(D):
     def foo(self):
         print "class C"
         super(C,self).foo()
-        
+
 class A(B,C):
     print "class A"
     pass
-print 'MRO:',[x.__name__ for x in A.__mro__] 
-    
+print 'MRO:',[x.__name__ for x in A.__mro__]
+
 f = A()
 f.foo()

@@ -33,14 +33,14 @@ class cached_property(object):
 
 
 class Foo(object):
-	@cached_property
-	def bar(self):
-		return 'dddd'
+    @cached_property
+    def bar(self):
+        return 'dddd'
 
 foo = Foo()
 bar = foo.bar
-print bar 
-# dddd 
+print bar
+# dddd
 """
 第一次取foo.bar, 调用bar方法，并设置方法的返回值给foo.bar.所以第二次就不会执行此方法: 第一次调用后方法就被替代了
 """
@@ -50,9 +50,8 @@ foo.bar = 'dd0000'
 
 
 print foo.bar
-	
+
 # dd0000
 """
 现在bar是一个简单的属性  可以任意赋值
 """
-
