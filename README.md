@@ -82,3 +82,6 @@
 
 ============
 11-12, 2013 add inspect -> test.py
+
+=============
+12-06, 2013 add class atribute  class -> attribute.py
