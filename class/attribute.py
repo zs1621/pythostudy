@@ -22,7 +22,7 @@ class counter:
     count = 0
     def __init__(self):
         self.__class__.count += 1
-        #self.count = 9
+        self.count = 9
 
 print counter, '---' # __main__.counter
 print counter.count # 0
@@ -34,6 +34,20 @@ d = counter() # 第一次创建实例后， 类的count 属性值变为1
 print d.count # 2
 print c.count # 2
 print counter.count # 2 # 类的属性  是被类和类实例共享
+
+"""
+如果没有定义self.* = **
+"""
+class Test_share():
+    a = 'ddddd'
+    def __init__(self):
+        #self.a = 'eeeee'
+        pass
+    def get_a(self):
+        print self.a
+
+k = Test_share()
+k.get_a() # ddddd
 
 """
 如果有兴趣可以看下将注释的self.count = 9 运行  能很明显的了解 类属性和实例属性的区别
