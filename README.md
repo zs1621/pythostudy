@@ -85,3 +85,7 @@
 
 =============
 12-06, 2013 add class atribute  class -> attribute.py
+
+=============
+
+9-25, 2014  start reading book [Problem Solving with Algoriths and Data Structures](http://interactivepython.org/courselib/static/pythonds/Introduction/GettingStartedwithData.html) 
