@@ -25,24 +25,26 @@ def score(newstring, oldstring):
     return float(score) / 27
 
 def main():
-    goal = "methinks it is like a weasel"
+    targetString = "methinks it is like a weasel"
+    stringGenerate = generate(27)
+    stringScore = score(stringGenerate, targetString)
+    string = stringGenerate
+    newScore = stringScore
     i = 0
-    fs = generate(27)
-    a = score(fs, goal)
-    bs = fs 
-    hs = a
-    s = a
-    while s != 1:
-        print s
-        gs = generate(27)
-        ns = score(gs, goal)
-        if ns > s:
-            hs = ns    
-            bs = gs
-        if i / 1000 >= 1:
-            print s, bs
+    while newScore != 1:
         i = i + 1
-        s = ns
+        newGenerate = generate(27)
+        if ( score(newGenerate, targetString) > newScore):
+            newScore = score(newGenerate, targetString)
+            string = newGenerate
+        else:
+            print newGenerate, "fesfef"
+
+        if ( i % 1000 == 0):
+            print i, string, newScore
+
+
+
 
 main()
 
